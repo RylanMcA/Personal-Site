@@ -1,42 +1,56 @@
 import React from "react";
-import { Grid, Button } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core/";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import GitHubIcon from '@material-ui/icons/GitHub';
+import MainBody from "./MainBody";
+import SiderBar from "../shared/sidebar";
+import Header from "../shared/header";
 
 //------------------
 //       CSS
 //------------------
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      padding: theme.spacing(2),
+    lightRoot: {
+      padding: theme.spacing(3),
+      backgroundColor: "#FFFFFF",
+      width: "100%",
+      height: "100%",
+    },
+    darkRoot: {
+      padding: theme.spacing(3),
+      backgroundColor: "#333333",
+      width: "100%",
+      height: "100%",
     },
   })
 );
-
 
 //------------------
 // HTML + TypeScript
 //------------------
 const DefaultPage = () => {
+  const [themeMode, setThemeMode] = React.useState<boolean>(true);
+
   const classes = useStyles();
   return (
-    <div>
-      <Grid
-        container
-        className={classes.root}
-        direction='row'
-        justify='space-evenly'
-        alignItems='center'
-      >
-        {[1,2,3,4].map((value) => (
-          <Grid item key={value}>
-            <Button variant='contained' color='primary'>
-              {value}
-            </Button>
+    <div className={themeMode ? classes.lightRoot : classes.darkRoot}>
+      <Container maxWidth='lg'>
+        <Header currentTheme={themeMode} themeChange={setThemeMode} />
+        <Grid
+          container
+          direction='row'
+          justify='flex-start'
+          alignItems='center'
+          xs={9}
+        >
+          <Grid item>
+            <MainBody />
           </Grid>
-        ))}
-      </Grid>
+          <Grid item>
+            <SiderBar />
+          </Grid>
+        </Grid>
+      </Container>
     </div>
   );
 };
