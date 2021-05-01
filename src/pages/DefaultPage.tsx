@@ -41,14 +41,10 @@ const DefaultPage = () => {
           direction='row'
           justify='flex-start'
           alignItems='center'
-          xs={9}
+          spacing={5}
         >
-          <Grid item>
-            <MainBody />
-          </Grid>
-          <Grid item>
-            <SiderBar />
-          </Grid>
+          <MainBody />
+          <SiderBar />
         </Grid>
       </Container>
     </div>

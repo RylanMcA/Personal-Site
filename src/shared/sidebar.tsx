@@ -10,14 +10,14 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      padding: theme.spacing(2),
+      padding: theme.spacing(3),
     },
     sidebarAboutBox: {
-      padding: theme.spacing(2),
+      padding: theme.spacing(3),
       backgroundColor: theme.palette.grey[200],
     },
     sidebarSection: {
-      marginTop: theme.spacing(3),
+      marginTop: theme.spacing(2),
     },
   })
 );
@@ -44,7 +44,6 @@ const description: String = "College student attending University of Arkansas. C
 const Sidebar = () => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
       <Grid item xs={12} md={4}>
         <Paper elevation={0} className={classes.sidebarAboutBox}>
           <Typography variant='h6' gutterBottom>
@@ -61,7 +60,7 @@ const Sidebar = () => {
             Social
           </Typography>
           {socials.map((network) => (
-            <Link display='block' variant='body1' href={network.link}>
+            <Link display='block' variant='body1' href={network.link} key={network.name}>
               <Grid container direction='row' spacing={1} alignItems='center'>
                 <Grid item>{network.iconType}</Grid>
                 <Grid item>{network.name}</Grid>
@@ -70,7 +69,6 @@ const Sidebar = () => {
           ))}
         </div>
       </Grid>
-    </div>
   );
 };
 
