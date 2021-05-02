@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: "100%",
+      padding: theme.spacing(1),
+    },
+    Tabs: {
+      padding: '16px',
     },
   })
 );

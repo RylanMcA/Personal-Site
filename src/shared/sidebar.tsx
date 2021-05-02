@@ -39,36 +39,42 @@ const socials = [
 ];
 
 const title: String = "About me";
-const description: String = "College student attending University of Arkansas. Candidate for a Bacholer of Science in Computer Science. Currently unemployed but seeking internships or full time employment";
+const description: String =
+  "College student attending University of Arkansas. Candidate for a Bacholer of Science in Computer Science. Currently unemployed but seeking internships or full time employment";
 
 const Sidebar = () => {
   const classes = useStyles();
   return (
-      <Grid item xs={12} md={4}>
-        <Paper elevation={0} className={classes.sidebarAboutBox}>
-          <Typography variant='h6' gutterBottom>
-            {title}
-          </Typography>
-          <Typography>{description}</Typography>
-        </Paper>
-        <div>
-          <Typography
-            variant='h6'
-            gutterBottom
-            className={classes.sidebarSection}
+    <Grid item xs={12} md={4}>
+      <Paper elevation={0} className={classes.sidebarAboutBox}>
+        <Typography variant='h6' gutterBottom>
+          {title}
+        </Typography>
+        <Typography>{description}</Typography>
+      </Paper>
+      <div>
+        <Typography
+          variant='h6'
+          gutterBottom
+          className={classes.sidebarSection}
+        >
+          Social
+        </Typography>
+        {socials.map((network) => (
+          <Link
+            display='block'
+            variant='body1'
+            href={network.link}
+            key={network.name}
           >
-            Social
-          </Typography>
-          {socials.map((network) => (
-            <Link display='block' variant='body1' href={network.link} key={network.name}>
-              <Grid container direction='row' spacing={1} alignItems='center'>
-                <Grid item>{network.iconType}</Grid>
-                <Grid item>{network.name}</Grid>
-              </Grid>
-            </Link>
-          ))}
-        </div>
-      </Grid>
+            <Grid container direction='row' spacing={1} alignItems='center'>
+              <Grid item>{network.iconType}</Grid>
+              <Grid item>{network.name}</Grid>
+            </Grid>
+          </Link>
+        ))}
+      </div>
+    </Grid>
   );
 };
 

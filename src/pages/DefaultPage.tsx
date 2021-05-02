@@ -40,7 +40,7 @@ const DefaultPage = () => {
           container
           direction='row'
           justify='flex-start'
-          alignItems='center'
+          alignItems='flex-start'
           spacing={5}
         >
           <MainBody />

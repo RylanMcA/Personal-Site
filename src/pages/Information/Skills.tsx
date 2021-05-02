@@ -10,6 +10,7 @@ import {
   ListItem,
   List,
   Grid,
+  Link,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -22,12 +23,54 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const pgInfo = [
   {
-    type: "Bachelor of Science Degree in Computer Science",
-    grad: "Expected Graduation: December 2021",
+    skill: "C++",
+    duration: "5 years",
+    link: "https://github.com/RylanMcA/Project-6",
   },
   {
-    type: "Candidate for Minor in Mathematics Degree",
-    grad: "Expected Graduation: December 2021",
+    skill: "Java",
+    duration: "6 years",
+    link: "https://github.com/RylanMcA/Software-Engineering-Spring-2020",
+  },
+  {
+    skill: "JavaScript",
+    duration: "2 years",
+    link: "https://github.com/RylanMcA/Assignment-8",
+  },
+  {
+    skill: "HTML",
+    duration: "3 years",
+    link: "https://github.com/RylanMcA/Assignment-7",
+  },
+  {
+    skill: "SQL",
+    duration: "6 months",
+    link: "#",
+  },
+  {
+    skill: "Python",
+    duration: "2 years",
+    link: "https://github.com/RylanMcA/Fall-Networks-HW3",
+  },
+  {
+    skill: "LaTeX",
+    duration: "1 year",
+    link: "#",
+  },
+  {
+    skill: "React",
+    duration: "1 year",
+    link: "https://github.com/RylanMcA/Personal-Site",
+  },
+  {
+    skill: "Material UI",
+    duration: "1 year",
+    link: "https://github.com/RylanMcA/Personal-Site",
+  },
+  {
+    skill: "TypeScript",
+    duration: "1 year",
+    link: "https://github.com/RylanMcA/Personal-Site",
   },
 ];
 
@@ -36,25 +79,22 @@ const Skills = () => {
   return (
     <Card elevation={0}>
       <CardContent>
-        <Typography gutterBottom variant='h5' component='h2'>
-          University of Arkansas
-        </Typography>
         {pgInfo.map((info) => (
-          <List key={info.type}>
-            <ListItem divider={true}>
-              <Grid
-                container
-                direction='column'
-                justify='flex-start'
-                alignItems='stretch'
+          <List key={info.skill}>
+            <ListItem>
+              <Link display='block' variant='body1' href={info.link}>
+                <Typography variant='subtitle1' component='p'>
+                  {info.skill}
+                </Typography>
+              </Link>
+              <Typography
+                variant='body2'
+                style={{ marginLeft: "10px", marginTop: "-7px" }}
+                color='textSecondary'
+                component='p'
               >
-                <Typography gutterBottom variant='subtitle1' component='p'>
-                  {info.type}
-                </Typography>
-                <Typography variant='body2' color='textSecondary' component='p'>
-                  {info.grad}
-                </Typography>
-              </Grid>
+                {info.duration}
+              </Typography>
             </ListItem>
           </List>
         ))}

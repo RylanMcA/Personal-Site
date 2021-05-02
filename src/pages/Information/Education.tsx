@@ -13,7 +13,7 @@ import {
   Grid,
 } from "@material-ui/core";
 
-import uarkLogo from "../public/uark_logo.jpg";
+const image = require('../../assets/uarkLogo.jpg');
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -37,8 +37,9 @@ const pgInfo = [
 const Education = () => {
   const classes = useStyles();
   return (
-    <Card elevation={0}>
+    <Card elevation={0} style={{padding:'10px'}}>
       <CardContent>
+      <CardMedia image={image}/>
         <Typography gutterBottom variant='h5' component='h2'>
           University of Arkansas
         </Typography>
