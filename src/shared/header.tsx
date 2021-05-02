@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
 // HTML + TypeScript
 //------------------
 
-const title: String = "Portfolio Website";
+const title: String = "Lynn McAlister's Portfolio Website";
 
 const DefaultPage = (props: any) => {
   const classes = useStyles();
@@ -52,8 +52,8 @@ const DefaultPage = (props: any) => {
         >
           {title}
         </Typography>
-        Theme
-        <Switch onChange={() => handleThemeChange()} />
+        WIP
+        <Switch disabled onChange={() => handleThemeChange()} />
       </Toolbar>
   );
 };

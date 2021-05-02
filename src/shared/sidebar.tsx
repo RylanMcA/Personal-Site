@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Link, Paper, Typography } from "@material-ui/core";
+import { Grid, Link, Paper, Typography, Card, CardMedia } from "@material-ui/core";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import TwitterIcon from "@material-ui/icons/Twitter";
@@ -10,11 +10,12 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      padding: theme.spacing(3),
+      padding: theme.spacing(1),
     },
     sidebarAboutBox: {
       padding: theme.spacing(3),
       backgroundColor: theme.palette.grey[200],
+      marginTop: '5px',
     },
     sidebarSection: {
       marginTop: theme.spacing(2),
@@ -46,6 +47,10 @@ const Sidebar = () => {
   const classes = useStyles();
   return (
     <Grid item xs={12} md={4}>
+      <div className={classes.root}>
+      <Card>
+        <CardMedia style={{ height: "375px", width: "370px"}} image='https://i.imgur.com/5H1NZgY.png?1'/>
+      </Card>
       <Paper elevation={0} className={classes.sidebarAboutBox}>
         <Typography variant='h6' gutterBottom>
           {title}
@@ -73,6 +78,7 @@ const Sidebar = () => {
             </Grid>
           </Link>
         ))}
+      </div>
       </div>
     </Grid>
   );

@@ -13,12 +13,10 @@ import {
   Grid,
 } from "@material-ui/core";
 
-const image = require('../../assets/uarkLogo.jpg');
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      padding: theme.spacing(2),
+      padding: theme.spacing(1),
     },
   })
 );
@@ -37,9 +35,14 @@ const pgInfo = [
 const Education = () => {
   const classes = useStyles();
   return (
-    <Card elevation={0} style={{padding:'10px'}}>
+    <Card elevation={0}>
       <CardContent>
-      <CardMedia image={image}/>
+        <div style={{ marginBottom:'25px', display: "flex", justifyContent: "center" }}>
+          <CardMedia
+            image='https://i.imgur.com/ZV0O56H.jpg?1'
+            style={{ height: "300px", width: "298px" }}
+          />
+        </div>
         <Typography gutterBottom variant='h5' component='h2'>
           University of Arkansas
         </Typography>

@@ -5,11 +5,9 @@ import {
   makeStyles,
   Theme,
   Card,
-  CardMedia,
   CardContent,
   ListItem,
   List,
-  Grid,
   Link,
 } from "@material-ui/core";
 
@@ -18,6 +16,10 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       padding: theme.spacing(2),
     },
+    listItems:{
+      padding: theme.spacing(1),
+      margin: '-15px',
+    }
   })
 );
 
@@ -80,8 +82,8 @@ const Skills = () => {
     <Card elevation={0}>
       <CardContent>
         {pgInfo.map((info) => (
-          <List key={info.skill}>
-            <ListItem>
+          <List key={info.skill} className={classes.listItems}>
+            <ListItem alignItems='flex-start' disableGutters={true}>
               <Link display='block' variant='body1' href={info.link}>
                 <Typography variant='subtitle1' component='p'>
                   {info.skill}
@@ -89,7 +91,7 @@ const Skills = () => {
               </Link>
               <Typography
                 variant='body2'
-                style={{ marginLeft: "10px", marginTop: "-7px" }}
+                style={{ marginLeft: "10px", margin: "flex" }}
                 color='textSecondary'
                 component='p'
               >
