@@ -53,7 +53,7 @@ const DefaultPage = (props: any) => {
           {title}
         </Typography>
         WIP
-        <Switch disabled onChange={() => handleThemeChange()} />
+        <Switch onChange={() => handleThemeChange()} />
       </Toolbar>
   );
 };

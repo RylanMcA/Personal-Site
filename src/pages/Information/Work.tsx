@@ -5,7 +5,6 @@ import {
   makeStyles,
   Theme,
   Card,
-  CardMedia,
   CardContent,
   ListItem,
   List,
@@ -15,7 +14,7 @@ import {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      padding: theme.spacing(2),
+      padding: theme.spacing(1),
     },
   })
 );
@@ -54,7 +53,7 @@ const pgInfo = [
 const Work = () => {
   const classes = useStyles();
   return (
-    <div>
+    <div className={classes.root}>
       {pgInfo.map((info) => (
         <Card elevation={0} key={info.place}>
           <CardContent>

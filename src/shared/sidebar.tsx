@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Link, Paper, Typography, Card, CardMedia } from "@material-ui/core";
+import { Grid, Link, Paper, Typography, Card, } from "@material-ui/core";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import TwitterIcon from "@material-ui/icons/Twitter";

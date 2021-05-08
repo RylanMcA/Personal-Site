@@ -1,6 +1,6 @@
 import React from "react";
 import { createStyles, makeStyles, Theme, withStyles } from "@material-ui/core/styles";
-import { AppBar, Box, Grid, Tab, Tabs, Typography } from "@material-ui/core";
+import { Box, Grid, Tab, Tabs, Typography } from "@material-ui/core";
 import Education from "./Information/Education";
 import Leadership from "./Information/Leadership";
 import Skills from "./Information/Skills";
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const AntTabs = withStyles({
   root: {
-    borderBottom: '1px solid #e8e8e8',
+    background: 'linear-gradient(77deg, #3A3739 0%, rgba(7,4,6,1) 90%)',
   },
   indicator: {
     backgroundColor: '#1890ff',
@@ -30,6 +30,7 @@ const AntTabs = withStyles({
 const AntTab = withStyles((theme: Theme) =>
   createStyles({
     root: {
+      color: "#FFFF",
       textTransform: 'none',
       minWidth: 72,
       fontWeight: theme.typography.fontWeightRegular,
@@ -39,7 +40,7 @@ const AntTab = withStyles((theme: Theme) =>
         'BlinkMacSystemFont',
         '"Segoe UI"',
         'Roboto',
-        '"Helvetica Neue"',
+        '"Helvetica Neue"', 
         'Arial',
         'sans-serif',
         '"Apple Color Emoji"',

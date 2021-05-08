@@ -7,7 +7,6 @@ import {
   List,
   ListItem,
   Card,
-  CardHeader,
   CardMedia,
   CardContent,
   Grid,
@@ -16,7 +15,7 @@ import {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      padding: theme.spacing(1),
+      padding: '1px',
     },
   })
 );
@@ -35,7 +34,7 @@ const pgInfo = [
 const Education = () => {
   const classes = useStyles();
   return (
-    <Card elevation={0}>
+    <Card className={classes.root} elevation={3}>
       <CardContent>
         <div style={{ marginBottom:'25px', display: "flex", justifyContent: "center" }}>
           <CardMedia

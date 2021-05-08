@@ -5,7 +5,6 @@ import {
   makeStyles,
   Theme,
   Card,
-  CardMedia,
   CardContent,
   ListItem,
   List,
