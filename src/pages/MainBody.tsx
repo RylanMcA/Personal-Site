@@ -1,5 +1,5 @@
 import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles, Theme, withStyles } from "@material-ui/core/styles";
 import { AppBar, Box, Grid, Tab, Tabs, Typography } from "@material-ui/core";
 import Education from "./Information/Education";
 import Leadership from "./Information/Leadership";
@@ -17,6 +17,54 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   })
 );
+
+const AntTabs = withStyles({
+  root: {
+    borderBottom: '1px solid #e8e8e8',
+  },
+  indicator: {
+    backgroundColor: '#1890ff',
+  },
+})(Tabs);
+
+const AntTab = withStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      textTransform: 'none',
+      minWidth: 72,
+      fontWeight: theme.typography.fontWeightRegular,
+      marginRight: theme.spacing(4),
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+      '&:hover': {
+        color: '#40a9ff',
+        opacity: 1,
+      },
+      '&$selected': {
+        color: '#1890ff',
+        fontWeight: theme.typography.fontWeightMedium,
+      },
+      '&:focus': {
+        color: '#40a9ff',
+      },
+    },
+    selected: {},
+  }),
+)((props: StyledTabProps) => <Tab disableRipple {...props} />);
+
+interface StyledTabProps {
+  label: string;
+}
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -62,19 +110,17 @@ const MainBody = () => {
   return (
     <Grid item xs={12} md={8}>
       <div className={classes.root} >
-        <AppBar position='relative'>
-          <Tabs
+          <AntTabs
             value={value}
             onChange={handleChange}
             aria-label='simple tabs example'
             centered
           >
-            <Tab label='EDU' {...a11yProps(0)} />
-            <Tab label='WORK' {...a11yProps(1)} />
-            <Tab label='LEADING' {...a11yProps(2)} />
-            <Tab label='SKILLS' {...a11yProps(3)} />
-          </Tabs>
-        </AppBar>
+            <AntTab label='EDU' {...a11yProps(0)} />
+            <AntTab label='WORK' {...a11yProps(1)} />
+            <AntTab label='LEADING' {...a11yProps(2)} />
+            <AntTab label='SKILLS' {...a11yProps(3)} />
+          </AntTabs>
         <TabPanel value={value} index={0}>
           <Education />
         </TabPanel>

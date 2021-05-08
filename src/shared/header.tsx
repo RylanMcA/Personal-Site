@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
 // HTML + TypeScript
 //------------------
 
-const title: String = "Lynn McAlister's Portfolio Website";
+const title: String = "Rylan McAlister's Portfolio Website";
 
 const DefaultPage = (props: any) => {
   const classes = useStyles();

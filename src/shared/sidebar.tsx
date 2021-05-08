@@ -49,7 +49,7 @@ const Sidebar = () => {
     <Grid item xs={12} md={4}>
       <div className={classes.root}>
       <Card>
-        <CardMedia style={{ height: "375px", width: "370px"}} image='https://i.imgur.com/5H1NZgY.png?1'/>
+        {/*<CardMedia style={{ height: "375px", width: "370px"}} image='https://i.imgur.com/5H1NZgY.png?1'/>*/}
       </Card>
       <Paper elevation={0} className={classes.sidebarAboutBox}>
         <Typography variant='h6' gutterBottom>
