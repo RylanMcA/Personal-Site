@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const AntTabs = withStyles({
   root: {
-    background: 'linear-gradient(77deg, #3A3739 0%, rgba(7,4,6,1) 90%)',
+    background: '#595959',
   },
   indicator: {
     backgroundColor: '#1890ff',

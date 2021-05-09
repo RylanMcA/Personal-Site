@@ -10,12 +10,20 @@ import {
   CardMedia,
   CardContent,
   Grid,
+  createMuiTheme,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       padding: '1px',
+      background: '#595959'
+    },
+    textHeader: {
+      color: "#1890ff"
+    },
+    textSubOne: {
+      color: "#1890ff"
     },
   })
 );
@@ -31,18 +39,26 @@ const pgInfo = [
   },
 ];
 
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      '"Segoe UI"',
+    ].join(','),
+  },
+});
+
 const Education = () => {
   const classes = useStyles();
   return (
-    <Card className={classes.root} elevation={3}>
+    <Card className={classes.root} elevation={4}>
       <CardContent>
-        <div style={{ marginBottom:'25px', display: "flex", justifyContent: "center" }}>
+        <div style={{ marginBottom:'20px', display: "flex", justifyContent: "center" }}>
           <CardMedia
             image='https://i.imgur.com/ZV0O56H.jpg?1'
             style={{ height: "300px", width: "298px" }}
           />
         </div>
-        <Typography gutterBottom variant='h5' component='h2'>
+        <Typography gutterBottom className={classes.textHeader} variant='h5' component='h2'>
           University of Arkansas
         </Typography>
         {pgInfo.map((info) => (
@@ -54,10 +70,10 @@ const Education = () => {
                 justify='flex-start'
                 alignItems='stretch'
               >
-                <Typography gutterBottom variant='subtitle1' component='p'>
+                <Typography gutterBottom className={classes.textSubOne} variant='subtitle1' component='p'>
                   {info.type}
                 </Typography>
-                <Typography variant='body2' color='textSecondary' component='p'>
+                <Typography className={classes.textSubOne} variant='body2' component='p'>
                   {info.grad}
                 </Typography>
               </Grid>
@@ -70,7 +86,6 @@ const Education = () => {
 };
 
 // TO DO
-// 1. Import Education into page
 // 2. Style Page
 // 3. Integrate into MainBody.tsx
 

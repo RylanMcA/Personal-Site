@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Grid } from "@material-ui/core/";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { Container, Grid, CssBaseline, ThemeProvider } from "@material-ui/core/";
+import { createMuiTheme, createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import MainBody from "./MainBody";
 import SiderBar from "../shared/sidebar";
 import Header from "../shared/header";
@@ -8,22 +8,26 @@ import Header from "../shared/header";
 //------------------
 //       CSS
 //------------------
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme: Theme) => 
   createStyles({
     lightRoot: {
       padding: theme.spacing(3),
       backgroundColor: "#FFFFFF",
-      width: "100%",
-      height: "100%",
     },
     darkRoot: {
       padding: theme.spacing(3),
       backgroundColor: "#333333",
-      width: "100%",
-      height: "100%",
     },
   })
 );
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'BlinkMacSystemFont',
+    ].join(','),
+  },
+});
 
 //------------------
 // HTML + TypeScript
@@ -33,7 +37,9 @@ const DefaultPage = () => {
 
   const classes = useStyles();
   return (
-    <div className={themeMode ? classes.lightRoot : classes.darkRoot}>
+    <div className={classes.darkRoot}>
+      <ThemeProvider theme={theme}>
+      <CssBaseline/>
       <Container maxWidth='lg'>
         <Header currentTheme={themeMode} themeChange={setThemeMode} />
         <Grid
@@ -47,6 +53,7 @@ const DefaultPage = () => {
           <SiderBar />
         </Grid>
       </Container>
+      </ThemeProvider>
     </div>
   );
 };
