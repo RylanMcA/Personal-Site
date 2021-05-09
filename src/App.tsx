@@ -1,5 +1,4 @@
 import React from 'react'
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import DefaultPage from './pages/DefaultPage';
 
@@ -8,5 +7,9 @@ function App() {
       <DefaultPage />
   );
 }
+
+// yellow: #DCCD79
+// green: ##4EC9B0
+// blue: "#1890ff"
 
 export default App;
